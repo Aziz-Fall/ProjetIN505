@@ -1,4 +1,4 @@
-#include "Sommet.h"
+#include "Sommet.hpp"
 
 using namespace std;
 

@@ -5,13 +5,13 @@ run: main
 main: main.o ArbreB.o Sommet.o 
 	g++ *.o -o main ${OPTIONS} 
 
-main.o: main.cc 
+main.o: main.cpp
 	g++ -c main.cc ${OPTIONS}
 
-ArbreB.o: ArbreB.cc 
+ArbreB.o: ArbreB.cpp
 	g++ -c ArbreB.cc ${OPTIONS}
 
-Sommet.o: Sommet.cc 
+Sommet.o: Sommet.cpp
 	g++ -c Sommet.cc ${OPTIONS}
 
 debug: 

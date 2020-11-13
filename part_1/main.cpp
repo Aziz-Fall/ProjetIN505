@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "ArbreB.h"
+#include "ArbreB.hpp"
 
 using namespace std;
 

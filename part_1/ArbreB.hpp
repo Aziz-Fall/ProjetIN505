@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Sommet.h"
+#include "Sommet.hpp"
 #include <iostream>
 #include <fstream>
 #include <vector>
