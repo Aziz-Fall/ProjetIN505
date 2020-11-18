@@ -1,7 +1,7 @@
 # Project encryption / decryption using *Huffman algoritm*
 
 Part_1 is the first part of the project that aims to display a binary tree to a *GUI*.
-The *GUI* is building with Qt. We use *GraphViz* to generate a binary tree an *CMake* to build a *Qt* project.To view the GUI we go to process some configuration.
+The *GUI* is building with Qt. We use *GraphViz* to generate a binary tree and *CMake* to build a *Qt* project.To view the GUI we go to process some configuration.
 
 ## Install graphviz and CMake
 
