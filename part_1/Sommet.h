@@ -1,25 +1,39 @@
 #pragma once 
 
 #include <iostream>
+#include <utility>
 
-/*
+/**
  * Class Sommet define a tree top 
- * composited by a char(_lettre) and his number of occurrence (_nbOc).
+ * composited by a pair that contain
+ * a char(_lettre) and his number 
+ * of occurrence (_nbOc) and the 
+ * son left et right.
+ * @author: ...(achraf & aziz fall)...
+ * @version: 1.0.0
 */
 class Sommet
 {
     private:
-        char _lettre;
-        int _nbOc; 
+        std::pair<char, int> _s;
+        Sommet *_gauche;
+        Sommet *_droite;
+
+        
     public:
         Sommet();
-        Sommet(char lettre, int nbOc);
+        Sommet(std::pair<char, int> s);
         ~Sommet();
-        void setLettre(int lettre);
-        char getLettre()const;
-        void setNbOc(int nbOc);
-        int getNbOc() const;
+        void setSommet(std::pair<char, int> & s);
+        std::pair<char, int> getSommet() const;
+        Sommet *getFilsGauche();
+        Sommet *getFilsDroite();
+        void setFilsGauche(Sommet *g);
+        void setFilsDroite(Sommet *d);
+        void printSommet(Sommet *s);
         friend std::ostream & operator<<(std::ostream & os, const Sommet & t);
         std::string  toString();
 
 };
+
+void supprimerSommets(Sommet *s);

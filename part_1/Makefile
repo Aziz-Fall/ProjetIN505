@@ -1,25 +1,11 @@
-OPTIONS=-Wall -g3 -O3 
-run: main
-	./main 
+config: 
+	@chmod 755 config.sh install.sh
+	@./config.sh
 
-main: main.o ArbreB.o Sommet.o 
-	g++ *.o -o main ${OPTIONS} 
+run:
+	./install.sh
 
-main.o: main.cc 
-	g++ -c main.cc ${OPTIONS}
+clean:
+	rm -fr build
 
-ArbreB.o: ArbreB.cc 
-	g++ -c ArbreB.cc ${OPTIONS}
 
-Sommet.o: Sommet.cc 
-	g++ -c Sommet.cc ${OPTIONS}
-
-debug: 
-	valgrind ./main 
-
-clean: 
-	rm -fr *.o main 
-	clear
-	
-generate:
-	dot tree.dot -Tpng -o tree.png

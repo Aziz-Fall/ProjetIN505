@@ -5,27 +5,34 @@
 #include <fstream>
 #include <vector>
 
+/**
+ * Class ArbreB define a binary tree
+ * composited by a Node (racine) that 
+ * is the root of the tree. The root
+ * is composited the son left et right 
+ * and primitives: a letter (char) 
+ * and his number of occurence (int).
+ * @author: ...(achraf & aziz fall)...
+ * @version: 1.0.0
+*/
 class ArbreB
 {
     private:
-        Sommet _root;
-        ArbreB *_left;
-        ArbreB *_right;
+        Sommet *_racine;
+        void ecritSommet(Sommet *s, std::ofstream & fstream);
 
-        friend void ecritSommet(ArbreB *a, std::ofstream & fstream);
-        void deleteArbreB(ArbreB *arbreB);
     public:
         ArbreB();
         ArbreB(const Sommet & sommet);
-        ArbreB( int letter, int nbOc);
         ArbreB( const ArbreB & arbreB);
         ~ArbreB();
         ArbreB *fusionne(ArbreB & t1, ArbreB & t2);
-        //ArbreB & operator=(const ArbreB & arbreB);
-        void operator<(const Sommet & sommet);
-        Sommet & operator>(const Sommet & sommet);
+        void operator<(const std::pair<char, int> & s);
+        friend ArbreB *operator+(ArbreB & a1, ArbreB & a2);
         Sommet recherche(const Sommet & sommet);
+        std::vector<std::pair<char, int>> decomposeArbre();
         void updateNbOc(const Sommet & sommet, int newNbOc);
-        std::vector<Sommet> & decompose();
+        void printArbre();
         void genereArbreB();
 };
+
