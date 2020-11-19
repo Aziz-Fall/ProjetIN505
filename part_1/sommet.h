@@ -1,13 +1,13 @@
-#pragma once 
+#pragma once
 
 #include <iostream>
 #include <utility>
 
 /**
- * Class Sommet define a tree top 
+ * Class Sommet define a tree top
  * composited by a pair that contain
- * a char(_lettre) and his number 
- * of occurrence (_nbOc) and the 
+ * a char(_lettre) and his number
+ * of occurrence (_nbOc) and the
  * son left et right.
  * @author: ...(achraf & aziz fall)...
  * @version: 1.0.0
@@ -19,7 +19,7 @@ class Sommet
         Sommet *_gauche;
         Sommet *_droite;
 
-        
+
     public:
         Sommet();
         Sommet(std::pair<char, int> s);

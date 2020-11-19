@@ -1,4 +1,4 @@
-#include "ArbreB.h"
+#include "arbreb.h"
 
 using namespace std;
 
@@ -12,8 +12,6 @@ ArbreB::ArbreB(const Sommet & sommet): _racine(nullptr)
 {
     _racine = new Sommet(sommet.getSommet());
 }
-
-ArbreB::ArbreB( const ArbreB & arbreB) {}
 
 //***************************************
 //************ Destructor ***************
@@ -40,7 +38,7 @@ void ArbreB::ecritSommet(Sommet *s, ofstream & fstream)
 
 /**
  * This method put the binary tree discription in a file
- * that allow the rule of digraphz. 
+ * that allow the rule of digraphz.
  */
 void ArbreB::genereArbreB()
 {
@@ -62,7 +60,7 @@ void ArbreB::operator<(const pair<char, int> & s)
     if( !this->_racine )
     {
         this->_racine = new Sommet(s);
-    }   
+    }
     else
     {
         int newNbOc(this->_racine->getSommet().second + s.second);
@@ -92,7 +90,7 @@ void decompose(Sommet *s, vector<pair<char, int>> & sommets)
 }
 
 /**
- * decomposeArbre is a method that take all leaf of 
+ * decomposeArbre is a method that take all leaf of
  * the binary tree and put them in a vector.
  */
 std::vector<pair<char, int>> ArbreB::decomposeArbre()

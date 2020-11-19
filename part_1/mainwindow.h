@@ -1,10 +1,9 @@
-#pragma once 
-
+#pragma once
 
 #include <QWidget>
 #include <QLabel>
 
-#include "ArbreB.h"
+#include "arbreb.h"
 
 /**
  * MainWindow is a class that represent the main Window

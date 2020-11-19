@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "MainWindow.h"
+#include "mainwindow.h"
 
 using namespace std;
 
@@ -13,3 +13,4 @@ int main(int argc, char *argv[])
 
     return app.exec();
 }
+

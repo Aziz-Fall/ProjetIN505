@@ -1,4 +1,4 @@
-#include "Sommet.h"
+#include "sommet.h"
 
 using namespace std;
 
@@ -45,14 +45,14 @@ Sommet *Sommet::getFilsDroite(){return _droite;}
 string Sommet::toString()
 {
     if( _s.first == -1 )
-        return to_string(_s.second); 
+        return to_string(_s.second);
     string node(1, _s.first);
     node.append("." + to_string(_s.second));
     return node;
 }
 
 /**
- * This method delete a node (Sommet) and his son 
+ * This method delete a node (Sommet) and his son
  * recursifly.
  * @param s: is the root.
  */

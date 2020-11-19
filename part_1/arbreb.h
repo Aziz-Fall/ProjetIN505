@@ -1,16 +1,16 @@
 #pragma once
 
-#include "Sommet.h"
+#include "sommet.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
 
 /**
  * Class ArbreB define a binary tree
- * composited by a Node (racine) that 
+ * composited by a Node (racine) that
  * is the root of the tree. The root
- * is composited the son left et right 
- * and primitives: a letter (char) 
+ * is composited the son left et right
+ * and primitives: a letter (char)
  * and his number of occurence (int).
  * @author: ...(achraf & aziz fall)...
  * @version: 1.0.0
@@ -24,7 +24,6 @@ class ArbreB
     public:
         ArbreB();
         ArbreB(const Sommet & sommet);
-        ArbreB( const ArbreB & arbreB);
         ~ArbreB();
         ArbreB *fusionne(ArbreB & t1, ArbreB & t2);
         void operator<(const std::pair<char, int> & s);

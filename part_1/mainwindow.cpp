@@ -1,4 +1,4 @@
-#include "MainWindow.h"
+#include "mainwindow.h"
 #include <QImageReader>
 #include <QMessageBox>
 #include <QVBoxLayout>
@@ -28,7 +28,7 @@ MainWindow::MainWindow()
     ArbreB *f = *arbreB2 + *arbreB;
 
     f->genereArbreB();
-    
+
     cout << "***Decomposition de l'arbre***" << endl;
     vector<pair<char, int>> sommets = f->decomposeArbre();
     for( size_t i(0); i < sommets.size(); i++)
@@ -49,7 +49,7 @@ MainWindow::MainWindow()
 }
 
 /**
-* This method load an image that name 
+* This method load an image that name
 * is passed on argument
 * @param nameFile: image's name.
 */
