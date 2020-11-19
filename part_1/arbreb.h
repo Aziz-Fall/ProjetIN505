@@ -25,13 +25,11 @@ class ArbreB
         ArbreB();
         ArbreB(const Sommet & sommet);
         ~ArbreB();
-        ArbreB *fusionne(ArbreB & t1, ArbreB & t2);
         void operator<(const std::pair<char, int> & s);
         friend ArbreB *operator+(ArbreB & a1, ArbreB & a2);
-        Sommet recherche(const Sommet & sommet);
+        bool recherche(const Sommet & sommet);
         std::vector<std::pair<char, int>> decomposeArbre();
-        void updateNbOc(const Sommet & sommet, int newNbOc);
-        void printArbre();
+        void updateSommet(const Sommet & sommet, std::pair<char, int> & s);
         void genereArbreB();
 };
 

@@ -103,11 +103,6 @@ std::vector<pair<char, int>> ArbreB::decomposeArbre()
 }
 
 /**
- * Display all tree top
- */
-void ArbreB::printArbre() { _racine->printSommet(_racine); }
-
-/**
  * Merge two binary tree and return the result.
  * @param a1: binary tree
  * @param a2: binary tree
@@ -125,4 +120,57 @@ ArbreB *operator+(ArbreB & a1, ArbreB & a2)
     delete &a1;
     delete &a2;
     return newArbre;
+}
+
+
+void update(Sommet *racine, Sommet sommet, std::pair<char, int> & s)
+{
+    if( !racine ) return;
+
+    if( racine->getSommet() == sommet.getSommet() )
+    {
+        //check if the node is a leaf.
+        if( racine && !racine->getFilsGauche() && !racine->getFilsDroite() )
+        {
+            racine->setSommet(s);
+            return;
+        }
+    }
+    else
+    {
+        update(racine->getFilsGauche(), sommet, s);
+        update(racine->getFilsDroite(), sommet, s);
+    }
+    
+}
+
+bool rechercheSommet(Sommet *racine, const Sommet & sommet)
+{
+    if( !racine ) return false; 
+    
+    if( racine->getSommet() == sommet.getSommet() ) return true;
+     
+    return rechercheSommet(racine->getFilsGauche(), sommet) || rechercheSommet(racine->getFilsDroite(), sommet);
+}
+
+/**
+ * Update a top tree passing in argument by 
+ * the pair s.
+ * @param sommet
+ * @param s
+ */
+void ArbreB::updateSommet(const Sommet & sommet, std::pair<char, int> & s)
+{
+    update(this->_racine, sommet, s);
+}
+
+/**
+ * Search a tree top in the binary tree and return 
+ * True if tree top finded else false.
+ * @param sommet
+ * @return boolean
+ */
+bool ArbreB::recherche(const Sommet & sommet)
+{
+    return rechercheSommet(this->_racine, sommet);
 }

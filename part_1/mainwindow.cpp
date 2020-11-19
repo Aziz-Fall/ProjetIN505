@@ -19,13 +19,15 @@ MainWindow::MainWindow()
     *arbreB < make_pair('G', 2);
     *arbreB < make_pair('A', 4);
     *arbreB < make_pair('D', 6);
-
+    
     *arbreB2 < make_pair('I', 2);
     *arbreB2 < make_pair('J', 2);
     *arbreB2 < make_pair('K', 4);
 
     //mergin arbreB and arbreB2
     ArbreB *f = *arbreB2 + *arbreB;
+
+    cout << "is A(1) in tree: " << f->recherche(Sommet(make_pair('A', 1))) << endl;
 
     f->genereArbreB();
 
@@ -39,6 +41,7 @@ MainWindow::MainWindow()
     f->genereArbreB();
     delete f;
 
+    // Genere an image.
     QProcess::execute("dot tree.dot -Tpng -o tree.png");
 
     loadImg("tree.png");
