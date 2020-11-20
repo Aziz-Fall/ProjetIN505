@@ -20,10 +20,11 @@ ArbreB::ArbreB(const Sommet & sommet): _racine(nullptr)
 ArbreB::~ArbreB(){ supprimerSommets(_racine);}
 
 /**
- * This method put the link between the root and her son
- * for each node of binary tree in the flux
- * @param s: a tree top
- * @param fstream: output flux
+ * @brief This method adds each connected pair
+ * of nodes to the output stream.
+ * 
+ * @param s: binary tree root
+ * @param fstream: output stream
  */
 void ArbreB::ecritSommet(Sommet *s, ofstream & fstream)
 {
@@ -37,8 +38,9 @@ void ArbreB::ecritSommet(Sommet *s, ofstream & fstream)
 }
 
 /**
- * This method put the binary tree discription in a file
- * that allow the rule of digraphz.
+ * @brief This method creates a tree.dot file 
+ * that will be used to generate an image
+ * of the binary tree, using graphviz.
  */
 void ArbreB::genereArbreB()
 {
@@ -52,8 +54,9 @@ void ArbreB::genereArbreB()
 }
 
 /**
- * This method add a tree top in the binary tree.
- * @param s: a pair contained a letter and his number of occurrence.
+ * @brief This method adds a new root the binary tree.
+ * 
+ * @param s: a pair that contains a character and its number of occurence.
  */
 void ArbreB::operator<(const pair<char, int> & s)
 {
@@ -74,8 +77,8 @@ void ArbreB::operator<(const pair<char, int> & s)
 
 /**
  * This method put each leaf of s in the vector sommets
- * @param s: a tree top
- * @param sommets: vector contained a pair of values.
+ * @param s: binary tree root
+ * @param sommets: a list of nodes.
  */
 void decompose(Sommet *s, vector<pair<char, int>> & sommets)
 {
@@ -90,8 +93,10 @@ void decompose(Sommet *s, vector<pair<char, int>> & sommets)
 }
 
 /**
- * decomposeArbre is a method that take all leaf of
+ * @brief DecomposeArbre is a method that take all the leafs of 
  * the binary tree and put them in a vector.
+ * 
+ * @return std::vector<pair<char, int>>: a list of nodes.
  */
 std::vector<pair<char, int>> ArbreB::decomposeArbre()
 {
@@ -103,10 +108,12 @@ std::vector<pair<char, int>> ArbreB::decomposeArbre()
 }
 
 /**
- * Merge two binary tree and return the result.
- * @param a1: binary tree
- * @param a2: binary tree
- * @return new tree that's the merging of a1 and a2
+ * @brief Merge two binary trees and return the result.
+ * 
+ * @param a1 left binary tree
+ * @param a2 right binary tree
+ * @return ArbreB*: new tree that has a1 as a1 lift child
+ *                  and a2 as a right child.
  */
 ArbreB *operator+(ArbreB & a1, ArbreB & a2)
 {
@@ -154,8 +161,7 @@ bool rechercheSommet(Sommet *racine, const Sommet & sommet)
 }
 
 /**
- * Update a top tree passing in argument by 
- * the pair s.
+ * Update node
  * @param sommet
  * @param s
  */
@@ -165,8 +171,8 @@ void ArbreB::updateSommet(const Sommet & sommet, std::pair<char, int> & s)
 }
 
 /**
- * Search a tree top in the binary tree and return 
- * True if tree top finded else false.
+ * This method returns True if the node sommet  
+ * was found in the binary tree, otherwise it returns false
  * @param sommet
  * @return boolean
  */

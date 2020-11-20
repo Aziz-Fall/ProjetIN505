@@ -6,13 +6,9 @@
 #include <vector>
 
 /**
- * Class ArbreB define a binary tree
- * composited by a Node (racine) that
- * is the root of the tree. The root
- * is composited the son left et right
- * and primitives: a letter (char)
- * and his number of occurence (int).
- * @author: ...(achraf & aziz fall)...
+ * Class ArbreB defines a binary tree
+ * composed by a root node (racine).
+ * @author: ...(charaf-eddine & aziz fall)...
  * @version: 1.0.0
 */
 class ArbreB

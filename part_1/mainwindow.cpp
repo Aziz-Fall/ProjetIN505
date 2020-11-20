@@ -11,10 +11,11 @@ MainWindow::MainWindow()
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    // Creat binary tree add some tree top.
+    // Create two binary trees
     ArbreB *arbreB = new ArbreB;
     ArbreB *arbreB2 = new ArbreB;
 
+    //Adding nodes
     *arbreB < make_pair('B', 2);
     *arbreB < make_pair('G', 2);
     *arbreB < make_pair('A', 4);
@@ -24,7 +25,7 @@ MainWindow::MainWindow()
     *arbreB2 < make_pair('J', 2);
     *arbreB2 < make_pair('K', 4);
 
-    //mergin arbreB and arbreB2
+    //Mergin arbreB and arbreB2
     ArbreB *f = *arbreB2 + *arbreB;
 
     cout << "is A(1) in tree: " << f->recherche(Sommet(make_pair('A', 1))) << endl;
@@ -51,10 +52,11 @@ MainWindow::MainWindow()
     setWindowTitle("Arbre Binaire");
 }
 
+//Constructs a pixmap from the file with the given fileName.
 /**
-* This method load an image that name
-* is passed on argument
-* @param nameFile: image's name.
+* This method load an image with
+* the given name fileName
+* @param fileName: image's name.
 */
 void MainWindow::loadImg(const QString & nameFile)
 {

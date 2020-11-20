@@ -17,7 +17,7 @@ Sommet::Sommet(pair<char, int> s): _s(s), _gauche(nullptr), _droite(nullptr){}
 Sommet::~Sommet(){}
 
 //***************************************
-//************ The Setter ***************
+//************ Setters ******************
 //***************************************
 
 void Sommet::setSommet(pair<char, int> & s)
@@ -32,7 +32,7 @@ void Sommet::setFilsGauche(Sommet *g) {if( g ) _gauche = g;}
 void Sommet::setFilsDroite(Sommet *d) { if( d ) _droite = d;}
 
 //***************************************
-//************ The getter ***************
+//************ Getter *******************
 //***************************************
 
 pair<char, int> Sommet::getSommet() const { return _s;}
@@ -40,7 +40,8 @@ Sommet *Sommet::getFilsGauche(){ return _gauche;}
 Sommet *Sommet::getFilsDroite(){return _droite;}
 
 /**
- * This method give the description of the classe.
+ * @brief Return a description of the classe
+ * 
  */
 string Sommet::toString()
 {
@@ -52,9 +53,9 @@ string Sommet::toString()
 }
 
 /**
- * This method delete a node (Sommet) and his son
- * recursifly.
- * @param s: is the root.
+ * @brief This method deletes the node s 
+ * and all of its children recursively.
+ * @param s: binary tree root.
  */
 void supprimerSommets(Sommet *s)
 {
@@ -70,7 +71,7 @@ void supprimerSommets(Sommet *s)
 }
 
 /**
- * This method display all nodes (s) recursifly.
+ * @brief This method display all nodes (s) recursively.
  * @param s is the root.
  */
 void Sommet::printSommet(Sommet *s)
@@ -84,10 +85,10 @@ void Sommet::printSommet(Sommet *s)
 }
 
 /**
- * Display a tree top on output standard.
- * @param os: output flux
- * @param s: tree top
- * @return output flux.
+ * @brief Prints the node to the output stream.
+ * @param os: output stream
+ * @param s: binary tree root
+ * @return output stream.
  */
 std::ostream & operator<<(std::ostream & os, const Sommet & s)
 {

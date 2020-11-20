@@ -4,12 +4,11 @@
 #include <utility>
 
 /**
- * Class Sommet define a tree top
- * composited by a pair that contain
- * a char(_lettre) and his number
- * of occurrence (_nbOc) and the
- * son left et right.
- * @author: ...(achraf & aziz fall)...
+ * Class Sommet represents a tree data structure 
+ * composed of left and right children and a pair 
+ * that contains a char(_lettre) and its number
+ * of occurences(_nbOc)
+ * @author: ...(charaf-eddine & aziz fall)...
  * @version: 1.0.0
 */
 class Sommet
