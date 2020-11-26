@@ -16,7 +16,8 @@ SOURCES += \
         arbreb.cpp \
         main.cpp \
         mainwindow.cpp \
-        sommet.cpp
+        sommet.cpp \
+        cryptage.cpp
 
 RESOURCES += qml.qrc
 
@@ -34,4 +35,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     arbreb.h \
     mainwindow.h \
-    sommet.h
+    sommet.h \
+    cryptage.h

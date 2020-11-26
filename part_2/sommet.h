@@ -29,6 +29,7 @@ class Sommet
         Sommet *getFilsDroite();
         void setFilsGauche(Sommet *g);
         void setFilsDroite(Sommet *d);
+        bool recherche(Sommet *root, const Sommet & s);
         void printSommet(Sommet *s);
         friend std::ostream & operator<<(std::ostream & os, const Sommet & t);
         std::string  toString();

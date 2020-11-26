@@ -19,6 +19,19 @@ ArbreB::ArbreB(const Sommet & sommet): _racine(nullptr)
 
 ArbreB::~ArbreB(){ supprimerSommets(_racine);}
 
+
+//***************************************
+//************   Setter   ***************
+//***************************************
+
+void ArbreB::setRacine(Sommet *s) { _racine = s ;}
+
+//***************************************
+//************   Getter   ***************
+//***************************************
+
+Sommet *ArbreB::getRacine() {return _racine;}
+
 /**
  * @brief This method adds each connected pair
  * of nodes to the output stream.
@@ -118,7 +131,7 @@ std::vector<pair<char, int>> ArbreB::decomposeArbre()
 ArbreB *operator+(ArbreB & a1, ArbreB & a2)
 {
     int newNbOc(a1._racine->getSommet().second + a2._racine->getSommet().second);
-    Sommet *newRacine = new Sommet(make_pair(-1, newNbOc));
+    Sommet *newRacine = new Sommet(make_pair(a1._racine->getSommet().first, newNbOc));
     newRacine->setFilsGauche(a1._racine);
     newRacine->setFilsDroite(a2._racine);
     ArbreB *newArbre = new ArbreB;

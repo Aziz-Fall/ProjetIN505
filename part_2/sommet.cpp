@@ -94,3 +94,13 @@ std::ostream & operator<<(std::ostream & os, const Sommet & s)
 {
     return os << s._s.first<< " -> " << s._s.second;
 }
+
+
+bool Sommet::recherche(Sommet *root, const Sommet & s)
+{
+    if( !root ) return false;
+    
+    if(root->getSommet() == s.getSommet() && !root->_droite && !root->_gauche ) return true;
+
+    return recherche(root->getFilsDroite(), s) || recherche(root->getFilsGauche(), s);
+}
