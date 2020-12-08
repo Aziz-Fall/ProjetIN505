@@ -48,4 +48,5 @@ class Cryptage
         QString getDonneesCryptees();
         QString getTextes();
         void setTextes(QString textes);
+        ArbreB *getArbreB();
 };

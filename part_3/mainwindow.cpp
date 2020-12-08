@@ -19,9 +19,12 @@ MainWindow::MainWindow()
     // init properties
     _textCrypte = new QTextEdit;
     _textCharge = new QTextEdit;
+    _textDecrypte = new QTextEdit;
     _textCharge->setReadOnly(true);
     _textCrypte->setReadOnly(true);
+    _textDecrypte->setReadOnly(true);
     _chargeFichierBtn = new QPushButton("Charger un fichier");
+    _dechiffreTextBtn = new QPushButton("Dechiffrer le texte");
     _img = new QLabel("Img");
     _crypteTextBtn = new QPushButton("Crypt text");
     _textACrypte = new QLineEdit("Put your text please");
@@ -40,14 +43,18 @@ MainWindow::MainWindow()
     cryptageLayout->addWidget(_textCharge);
     cryptageLayout->addWidget(new QLabel("Text Crypted"));
     cryptageLayout->addWidget( _textCrypte);
+    cryptageLayout->addWidget(_dechiffreTextBtn);
+    cryptageLayout->addWidget(new QLabel("Decrypted text"));
+    cryptageLayout->addWidget(_textDecrypte);
 
     _mainLayout->addLayout(cryptageLayout);
     setLayout(_mainLayout);
-    setWindowTitle("Cryptage");
+    setWindowTitle("Cryptage-Decryptage");
 
     // Connect buttons to there actions
     connect(_chargeFichierBtn, SIGNAL(clicked()), this, SLOT(cryptFile()));
     connect(_crypteTextBtn, SIGNAL(clicked()), this, SLOT(cryptText()));
+    connect(_dechiffreTextBtn, SIGNAL(clicked()), this, SLOT(decrypt()));
 }
 
 
@@ -118,5 +125,14 @@ void MainWindow::afficheImg()
     dialog->setWindowTitle("Arbre Binaire");
     _textCrypte->setText(_crypt.getDonneesCryptees());
     _textCharge->setText(_crypt.getTextes());
+}
+
+/**
+ * @brief decrypt a text
+ */
+void MainWindow::decrypt()
+{
+    Decryptage decrypt(_crypt.getArbreB(), _crypt.getDonneesCryptees().toStdString());
+    _textDecrypte->setText(QString::fromStdString(decrypt.getMessageDechiffres()));
 }
 

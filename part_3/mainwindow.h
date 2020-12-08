@@ -9,6 +9,7 @@
 #include <QHBoxLayout>
 
 #include "cryptage.h"
+#include "decryptage.h"
 /**
  * MainWindow is a class that represents the main Window
  * It displays an image of the binary tree using QLabel widget.
@@ -23,6 +24,8 @@ class MainWindow: public QWidget
         QLabel *_img;
         QPushButton *_chargeFichierBtn;
         QPushButton *_crypteTextBtn;
+        QPushButton *_dechiffreTextBtn;
+        QTextEdit *_textDecrypte;
         QLineEdit *_textACrypte;
         QTextEdit *_textCharge;
         QTextEdit *_textCrypte;
@@ -39,5 +42,6 @@ class MainWindow: public QWidget
     public slots:
         void cryptFile();
         void cryptText();
+        void decrypt();
 };
 

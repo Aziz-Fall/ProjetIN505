@@ -38,7 +38,6 @@ Cryptage::Cryptage(std::string textACrypte, int size)
         _construitArbreB();
         _cryptDonnees();
         _arbreB->genereArbreB();
-        delete _arbreB;
 
         QProcess::execute("rm -f file.txt");
     }
@@ -57,8 +56,6 @@ Cryptage::Cryptage(std::string nomFichier):_nomFichier(nomFichier), _arbreB(null
     _construitArbreB();
     _cryptDonnees();
     _arbreB->genereArbreB();
-
-    delete _arbreB;
 }
 
 /**
@@ -215,4 +212,14 @@ void Cryptage::setTextes(QString textes)
 {
     if( !textes.isEmpty() )
         _textes = textes;
+}
+
+/**
+ * @brief Get the Arbre B object
+ * 
+ * @return ArbreB* 
+ */
+ArbreB *Cryptage::getArbreB()
+{
+    return _arbreB;
 }

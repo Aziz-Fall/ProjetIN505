@@ -17,7 +17,8 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         sommet.cpp \
-        cryptage.cpp
+        cryptage.cpp \
+        decryptage.cpp
 
 RESOURCES += qml.qrc
 
@@ -36,4 +37,5 @@ HEADERS += \
     arbreb.h \
     mainwindow.h \
     sommet.h \
-    cryptage.h
+    cryptage.h \
+    decryptage.h
